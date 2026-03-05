@@ -1,0 +1,127 @@
+body{
+
+margin:0;
+font-family:sans-serif;
+background:rgb(252, 252, 252);
+color:rgb(212, 3, 3);
+
+}
+
+.navbar{
+
+display:flex;
+justify-content:space-between;
+padding:15px 40px;
+
+background:rgba(77, 64, 64, 0.7);
+
+position:fixed;
+width:100%;
+
+}
+
+.menu a{
+
+margin:0 15px;
+text-decoration:none;
+color:rgb(0, 0, 0);
+
+}
+
+.menu a.active{
+
+color:#16965a;
+
+}
+
+.hero{
+
+height:100vh;
+
+background:url(img/bg.jpg) center/cover;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+text-align:center;
+
+}
+
+.hero h1{
+
+font-size:70px;
+color:#ffffff;
+
+}
+
+.btn{
+
+padding:12px 25px;
+border-radius:8px;
+text-decoration:none;
+
+}
+
+.green{
+
+background:#ffffff;
+color:rgb(0, 0, 0);
+
+}
+
+.outline{
+
+border:2px solid #00ff88;
+color:#fffcfc;
+
+}
+
+.login-box{
+
+width:300px;
+margin:200px auto;
+
+display:flex;
+flex-direction:column;
+gap:10px;
+
+}
+
+input{
+
+padding:10px;
+
+}
+body{
+margin:0;
+font-family:Arial;
+background:#1d2d50;
+color:white;
+}
+
+.navbar{
+display:flex;
+justify-content:center;
+gap:30px;
+background:#1b1b1b;
+padding:15px;
+box-shadow:0 0 10px #69c3f7;
+}
+
+.navbar a{
+color:white;
+text-decoration:none;
+padding:10px 18px;
+border-radius:8px;
+transition:0.3s;
+}
+
+.navbar a:hover{
+background:#ff9900;
+transform:scale(1.05);
+}
+
+.navbar a.active{
+background:#ffffff;
+}
