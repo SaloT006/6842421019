@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>ตลาดกลาง</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Segoe UI;
+background:linear-gradient(135deg,#0f1b2e,#07101f);
+color:white;
+}
+
+/* navbar */
+.navbar{
+display:flex;
+justify-content:center;
+gap:40px;
+padding:20px;
+}
+
+.navbar a{
+color:#cfd8ff;
+text-decoration:none;
+}
+
+.active{
+color:#00ff88;
+border-bottom:2px solid #00ff88;
+}
+
+/* container */
+.container{
+width:1000px;
+margin:auto;
+margin-top:50px;
+}
+
+/* search */
+.search{
+margin-bottom:30px;
+}
+
+.search input{
+width:100%;
+padding:12px;
+border-radius:8px;
+border:none;
+background:#1d2d50;
+color:white;
+}
+
+/* grid */
+.grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:25px;
+}
+
+/* item card */
+.card{
+background:#0f1c33;
+padding:20px;
+border-radius:15px;
+box-shadow:0 10px 25px rgba(0,0,0,0.4);
+text-align:center;
+}
+
+.card img{
+width:80px;
+margin-bottom:10px;
+}
+
+.price{
+color:#70f0b4;
+font-weight:bold;
+margin:10px 0;
+}
+
+button{
+width:100%;
+padding:10px;
+border:none;
+border-radius:8px;
+background:#70f0b4;
+cursor:pointer;
+font-weight:bold;
+}
+
+button:hover{
+background:#55e6a2;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="navbar">
+<a href="index.html">หน้าหลัก</a>
+<a href="market.html" class="active">ตลาดกลาง</a>
+<a href="shop.html">ร้านค้า</a>
+<a href="event.html">กิจกรรม</a>
+</div>
+
+<div class="container">
+
+<h1>ตลาดกลาง</h1>
+
+<div class="search">
+<input type="text" placeholder="ค้นหาสินค้า...">
+</div>
+
+<div class="grid">
+
+<div class="card">
+<img src="https://cdn-icons-png.flaticon.com/512/732/732212.png">
+<h3>บัญชี Minecraft</h3>
+<div class="price">120 บาท</div>
+<button>ซื้อ</button>
+</div>
+
+<div class="card">
+<img src="https://cdn-icons-png.flaticon.com/512/5968/5968756.png">
+<h3>Discord Nitro</h3>
+<div class="price">90 บาท</div>
+<button>ซื้อ</button>
+</div>
+
+<div class="card">
+<img src="https://cdn-icons-png.flaticon.com/512/732/732200.png">
+<h3>Steam Wallet</h3>
+<div class="price">50 บาท</div>
+<button>ซื้อ</button>
+</div>
+
+<div class="card">
+<img src="https://cdn-icons-png.flaticon.com/512/5968/5968705.png">
+<h3>Spotify Premium</h3>
+<div class="price">60 บาท</div>
+<button>ซื้อ</button>
+</div>
+
+<div class="card">
+<img src="https://cdn-icons-png.flaticon.com/512/5968/5968875.png">
+<h3>YouTube Premium</h3>
+<div class="price">80 บาท</div>
+<button>ซื้อ</button>
+</div>
+
+<div class="card">
+<img src="https://cdn-icons-png.flaticon.com/512/888/888879.png">
+<h3>Netflix</h3>
+<div class="price">100 บาท</div>
+<button>ซื้อ</button>
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>

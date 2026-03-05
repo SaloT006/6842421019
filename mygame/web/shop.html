@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>ร้านค้า</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Segoe UI;
+background:linear-gradient(135deg,#0f1b2e,#07101f);
+color:white;
+}
+
+/* navbar */
+.navbar{
+display:flex;
+justify-content:center;
+gap:40px;
+padding:20px;
+}
+
+.navbar a{
+color:#cfd8ff;
+text-decoration:none;
+}
+
+.active{
+color:#00ff88;
+border-bottom:2px solid #00ff88;
+}
+
+/* container */
+.container{
+width:1000px;
+margin:auto;
+margin-top:50px;
+}
+
+/* grid */
+.grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:25px;
+}
+
+/* card */
+.card{
+background:#0f1c33;
+padding:20px;
+border-radius:15px;
+text-align:center;
+box-shadow:0 10px 25px rgba(0,0,0,0.4);
+}
+
+.card img{
+width:80px;
+margin-bottom:10px;
+}
+
+.price{
+color:#70f0b4;
+font-weight:bold;
+margin:10px 0;
+}
+
+/* button */
+button{
+width:100%;
+padding:10px;
+border:none;
+border-radius:8px;
+background:#70f0b4;
+cursor:pointer;
+font-weight:bold;
+}
+
+button:hover{
+background:#55e6a2;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="navbar">
+<a href="index.html">หน้าหลัก</a>
+<a href="market.html">ตลาดกลาง</a>
+<a href="shop.html" class="active">ร้านค้า</a>
+<a href="event.html">กิจกรรม</a>
+</div>
+
+<div class="container">
+
+<h1>ร้านค้า</h1>
+
+<div class="grid">
+
+<div class="card">
+<img src="https://cdn-icons-png.flaticon.com/512/732/732212.png">
+<h3>VIP Rank</h3>
+<div class="price">199 บาท</div>
+<button>ซื้อสินค้า</button>
+</div>
+
+<div class="card">
+<img src="https://cdn-icons-png.flaticon.com/512/1048/1048953.png">
+<h3>สุ่มกล่อง Item</h3>
+<div class="price">59 บาท</div>
+<button>ซื้อสินค้า</button>
+</div>
+
+<div class="card">
+<img src="https://cdn-icons-png.flaticon.com/512/3523/3523063.png">
+<h3>เหรียญในเกม 1000</h3>
+<div class="price">50 บาท</div>
+<button>ซื้อสินค้า</button>
+</div>
+
+<div class="card">
+<img src="https://cdn-icons-png.flaticon.com/512/833/833472.png">
+<h3>Skin พิเศษ</h3>
+<div class="price">79 บาท</div>
+<button>ซื้อสินค้า</button>
+</div>
+
+<div class="card">
+<img src="https://cdn-icons-png.flaticon.com/512/3523/3523887.png">
+<h3>กล่องสุ่ม Rare</h3>
+<div class="price">120 บาท</div>
+<button>ซื้อสินค้า</button>
+</div>
+
+<div class="card">
+<img src="https://cdn-icons-png.flaticon.com/512/1006/1006771.png">
+<h3>Battle Pass</h3>
+<div class="price">150 บาท</div>
+<button>ซื้อสินค้า</button>
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>
