@@ -1,35 +1,91 @@
 <!DOCTYPE html>
-<html lang="th">
-
+<html>
 <head>
-<meta charset="UTF-8">
-<title>Login / Register</title>
-
-<link rel="stylesheet" href="style.css">
+  <title>เข้าสู่ระบบ</title>
 </head>
-
 <body>
 
-<div class="login-box">
+<h2>เข้าสู่ระบบ</h2>
 
-<h5>เข้าสู่ระบบ ลงทะเบียน แลก กด เข้าสู่ระบบ เลย</h4>
+Email<br>
+<input type="email" id="email"><br><br>
 
-<input type="email" id="email" placeholder="Email">
-
-<input type="password" id="password" placeholder="Password">
+Password<br>
+<input type="password" id="password"><br><br>
 
 <button onclick="login()">เข้าสู่ระบบ</button>
+<br><br>
+<button onclick="register()">สมัครสมาชิก</button>
+<br><br>
+<button onclick="loginGoogle()">เข้าสู่ระบบด้วย Google</button>
 
-<button onclick="register()">ลงทะเบียน</button>
+<script type="module">
 
-</div>
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 
-<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+import { 
+  getAuth,
+  signInWithEmailAndPassword,
+  createUserWithEmailAndPassword,
+  GoogleAuthProvider,
+  signInWithPopup
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
-<script src="firebase.js"></script>
-<script src="script.js"></script>
+
+const firebaseConfig = {
+  apiKey: "AIzaSyAdYf0wMZEMDDqRF47fuYIQBkSpP0yJSMQ",
+  authDomain: "salot-946cd.firebaseapp.com",
+  projectId: "salot-946cd",
+  storageBucket: "salot-946cd.firebasestorage.app",
+  messagingSenderId: "197974146706",
+  appId: "1:197974146706:web:b596b176ab7d23023fb04b"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
+window.login = function() {
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+
+  signInWithEmailAndPassword(auth, email, password)
+    .then(() => {
+      alert("Login สำเร็จ");
+      window.location.href = "dashboard.html";
+    })
+    .catch((error) => {
+      alert(error.message);
+    });
+}
+
+window.register = function() {
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+
+  createUserWithEmailAndPassword(auth, email, password)
+    .then(() => {
+      alert("สมัครสมาชิกสำเร็จ");
+      window.location.href = "dashboard.html";
+    })
+    .catch((error) => {
+      alert(error.message);
+    });
+}
+
+window.loginGoogle = function() {
+  const provider = new GoogleAuthProvider();
+
+  signInWithPopup(auth, provider)
+    .then(() => {
+      alert("Google Login สำเร็จ");
+      window.location.href = "dashboard.html";
+    })
+    .catch((error) => {
+      alert(error.message);
+    });
+}
+
+</script>
 
 </body>
 </html>
