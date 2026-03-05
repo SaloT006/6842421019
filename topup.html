@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>เติมเงิน</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family:Segoe UI;
+    background:linear-gradient(135deg,#0f1b2e);
+    color:white;
+}
+
+/* navbar */
+.navbar{
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    padding:20px;
+}
+
+.navbar a{
+    color:#ffffff;
+    text-decoration:none;
+}
+
+.active{
+    color:#ffffff;
+    border-bottom:2px solid #ffffff;
+}
+
+/* main */
+.container{
+    width:900px;
+    margin:auto;
+    margin-top:60px;
+}
+
+/* card */
+.card{
+    background:#0f1c33;
+    border-radius:15px;
+    padding:30px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.4);
+}
+
+/* grid */
+.grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:30px;
+}
+
+.box{
+    background:#13223f;
+    padding:20px;
+    border-radius:10px;
+}
+
+/* input */
+input{
+    width:100%;
+    padding:10px;
+    border-radius:5px;
+    border:none;
+    margin-top:15px;
+    background:#1d2d50;
+    color:white;
+}
+
+/* button */
+button{
+    width:100%;
+    padding:12px;
+    margin-top:15px;
+    background:#70f0b4;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+/* qr */
+.qr{
+    height:200px;
+    border:2px dashed #ffffff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:10px;
+    color:#ffffff;
+}
+.qr-box{
+width:300px;
+margin:auto;
+padding:20px;
+border-radius:15px;
+background:white;
+box-shadow:0 0 15px rgba(30, 110, 163, 0.2);
+text-align:center;
+}
+</style>
+</head>
+
+<body>
+
+<div class="navbar">
+<a href="index.html">หน้าหลัก</a>
+<a href="topup.html" class="active">เติมเงิน</a>
+<a href="market.html">ตลาดกลาง</a>
+<a href="shop.html">ร้านค้า</a>
+<a href="event.html">กิจกรรม</a>
+</div>
+
+<div class="container">
+
+<h1>เติมเงิน</h1>
+
+<div class="card">
+
+<div class="grid">
+
+<div class="box">
+<p> ต้องสแกน QR Code ด้วยแอปธนาคารที่รองรับการสแกน QR Code PromptPay เท่านั้น</p>
+<p>รองรับแอปธนาคารดังนี้</p> 
+<p> K PLUS </p>
+<p> CB Easy</p>
+<p> Krungthai Next</p>
+
+<P>จำนวนเงิน </P>
+<input type="number" id="money" placeholder="0.00">
+
+<button onclick="createQR()">สร้าง QR Code</button>
+<div class="qr-box" >
+<img id="qr">
+    </div>
+</div>
+</div><div class="box">❌ ห้ามสแกนจาก
+
+กล้องมือถือ
+
+LINE
+ </p>ต้องสแกน QR Code ด้วยแอปธนาคาร</div>
+<script>
+    
+function createQR(){
+
+let money = document.getElementById("money").value
+let phone = "0906005237"    
+
+let qr = "https://promptpay.io/"+phone+"/"+money+".png"
+
+document.getElementById("qr").src = qr
+
+}
+</script>
+</div>
+</div><div class="box">
+<h4>ถ้าคุณไม่สะดวกสแกน QR Code ให้แล้วทักเฟสแอดได้เลย</h4>
+<p></p>
+<box class="qr-box">
+
+</style><a href="https://www.facebook.com/master.jiraya.897709" target="_blank"> Masteř Jirayă  </box>
+
+
+</div>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>สมัครสมาชิก</title>
+</head>
+
+<body>
+
+<h2>สมัครสมาชิก</h2>
+
+Email<br>
+<input type="email" id="email"><br><br>
+
+Password<br>
+<input type="password" id="password"><br><br>
+
+<button onclick="register()">สมัครสมาชิก</button>
+
+<p id="result"></p>
+
+<script type="module">
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+import { getFirestore, setDoc, doc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "YOUR_API",
+  authDomain: "YOUR_PROJECT.firebaseapp.com",
+  projectId: "YOUR_PROJECT",
+  storageBucket: "YOUR_PROJECT.appspot.com",
+  messagingSenderId: "XXXX",
+  appId: "XXXX"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth();
+const db = getFirestore();
+
+window.register = async function(){
+
+let email = document.getElementById("email").value;
+let password = document.getElementById("password").value;
+
+try{
+
+const userCredential = await createUserWithEmailAndPassword(auth,email,password);
+const user = userCredential.user;
+
+await setDoc(doc(db,"users",user.uid),{
+email: email,
+coin: 0,
+created: new Date()
+});
+
+document.getElementById("result").innerHTML="สมัครสมาชิกสำเร็จ";
+
+}catch(error){
+
+document.getElementById("result").innerHTML=error.message;
+
+}
+
+}
+
+</script>
+
+</body>
+</html>

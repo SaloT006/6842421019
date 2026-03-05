@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Game Dashboard</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #0f0f0f, #141e30);
+      color: white;
+    }
+
+    .topbar {
+      background: #0a0a0a;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 0 15px #00f2ff;
+    }
+
+    .topbar h2 {
+      color: #00f2ff;
+    }
+
+    .logout-btn {
+      background: #ff004c;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 8px;
+      color: white;
+      cursor: pointer;
+    }
+
+    .container {
+      padding: 40px;
+    }
+
+    .card {
+      background: rgba(0,0,0,0.7);
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px #00f2ff;
+      max-width: 500px;
+      margin-bottom: 30px;
+    }
+
+    .items {
+      background: rgba(0,0,0,0.7);
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px #ff004c;
+      max-width: 500px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="topbar">
+  <h2>🎮 CY GAME PANEL</h2>
+  <button class="logout-btn" onclick="logout()">Logout</button>
+</div>
+
+<div class="container">
+
+  <div class="card">
+    <h3>👤 Player Profile</h3>
+    <p>Email: <span id="userEmail"></span></p>
+    <p>Level: 1</p>
+    <p>EXP: 0 / 100</p>
+    <p>💰 Coins: 1000</p>
+  </div>
+
+  <div class="items">
+    <h3>🔫 Starter Items</h3>
+    <p>✔ Pistol</p>
+    <p>✔ Combat Knife</p>
+  </div>
+
+</div>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { getAuth, onAuthStateChanged, signOut } 
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyAdYf0wMZEMDDqRF47fuYIQBkSpP0yJSMQ",
+  authDomain: "salot-946cd.firebaseapp.com",
+  projectId: "salot-946cd",
+  storageBucket: "salot-946cd.firebasestorage.app",
+  messagingSenderId: "197974146706",
+  appId: "1:197974146706:web:b596b176ab7d23023fb04b"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
+onAuthStateChanged(auth, (user) => {
+  if (!user) {
+    window.location.href = "login.html";
+  } else {
+    document.getElementById("userEmail").innerText = user.email;
+  }
+});
+
+window.logout = function() {
+  signOut(auth).then(() => {
+    window.location.href = "login.html";
+  });
+}
+</script>
+
+</body>
+</html>
